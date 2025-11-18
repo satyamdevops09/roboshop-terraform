@@ -7,9 +7,16 @@ variable "instance_type"{
   default="t3.micro"
 }
 
-resource "aws_instance" "web" {
+variable "instances" {
+  default = ["frontend","catalogue","MongoDB","Redis","User","Cart","MySQL","Shipping","RabbitMQ","Payment"]
+}
+
+resource "aws_instance" "instances" {
+  count=length(var.instances)
   ami           = var.ami
   instance_type = var.instance_type
 
   tags = {
-    Name = "web"
+    Name = var.instances[count.index]
+  }
+}
