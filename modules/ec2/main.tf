@@ -4,6 +4,6 @@ resource "aws_instance" "instances" {
   instance_type = var.instance_type
 
   tags = {
-    Name = var.instances[count.index]
+    Name = "${var.name}-${var.env}"
   }
 }
