@@ -7,3 +7,11 @@ resource "aws_instance" "instances" {
     Name = "${var.name}-${var.env}"
   }
 }
+
+resource "aws_route53_record" "www" {
+  zone_id = var.zone_id
+  name    = "${var.name}-${var.env}"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instances.private_ip]
+}

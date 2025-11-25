@@ -35,3 +35,5 @@ instances = {
 
 env = "dev"
 ami = "ami-09c813fb71547fc4f"
+zone_id="Z02251823TLKC5608JSS7"
+zone_name="sdevops09.online"
