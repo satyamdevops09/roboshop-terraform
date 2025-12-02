@@ -1,4 +1,5 @@
 dev-init:
+	git pull
 	terraform init
 
 dev-plan:
