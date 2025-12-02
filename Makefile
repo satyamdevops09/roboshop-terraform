@@ -6,10 +6,10 @@ dev-plan:
 	terraform plan -var-file=./environments/dev/main.tfvars
 
 
-dev-apply:
+dev-apply: dev-init
 	terraform apply -var-file=./environments/dev/main.tfvars -auto-approve
 
-dev-destroy:
+dev-destroy: dev-init
 	terraform destroy -var-file=./environments/dev/main.tfvars -auto-approve
 
 prod-init:
@@ -20,10 +20,10 @@ prod-plan:
 	terraform plan -var-file=./environments/prod/main.tfvars
 
 
-prod-apply:
+prod-apply: prod-init
 	terraform apply -var-file=./environments/prod/main.tfvars -auto-approve
 
-prod-destroy:
+prod-destroy: prod-init
 	terraform destroy -var-file=./environments/prod/main.tfvars -auto-approve
 
 
