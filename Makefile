@@ -7,7 +7,10 @@ dev-plan:
 
 
 dev-apply:
-	terraform apply -var-file=./environments/dev/main.tfvars
+	terraform apply -var-file=./environments/dev/main.tfvars -auto-approve
+
+dev-destroy:
+	terraform destroy -var-file=./environments/dev/main.tfvars -auto-approve
 
 prod-init:
 	rm -rf .terraform/terraform.tfstate
@@ -18,6 +21,9 @@ prod-plan:
 
 
 prod-apply:
-	terraform apply -var-file=./environments/prod/main.tfvars
+	terraform apply -var-file=./environments/prod/main.tfvars -auto-approve
+
+prod-destroy:
+	terraform destroy -var-file=./environments/prod/main.tfvars -auto-approve
 
 
