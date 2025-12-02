@@ -15,7 +15,7 @@ prod-plan:
 	terraform plan -var-file=./environments/prod/main.tfvars
 
 
-dev-apply:
+prod-apply:
 	terraform apply -var-file=./environments/prod/main.tfvars
 
 
