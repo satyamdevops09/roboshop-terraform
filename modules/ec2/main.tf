@@ -2,6 +2,7 @@ resource "aws_instance" "instances" {
 
   ami           = var.ami
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
     Name = "${var.name}-${var.env}"
@@ -14,4 +15,23 @@ resource "aws_route53_record" "www" {
   type    = "A"
   ttl     = 30
   records = [aws_instance.instances.private_ip]
+}
+
+resource "null_resource" "anisible" {
+  depends_on = [aws_route53_record]
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "ec2-user"
+      password = "DevOps321"
+      host     = aws_instance.instances.private_ip
+    }
+    inline = [
+      "sudo pip3.11 install ansible",
+      "ansible-pull -i localhost, -U https://github.com/satyamdevops09/roboshop-ansible roboshop.yml -e role_name=${var.name}"
+    ]
+
+
+  }
+
 }
