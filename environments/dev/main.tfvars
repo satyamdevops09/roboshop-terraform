@@ -10,7 +10,7 @@ instances = {
   mongodb = {
     instance_type = "t3.small"
   }
-  redies = {
+  redis = {
     instance_type = "t3.small"
   }
   user = {
