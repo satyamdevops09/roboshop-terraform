@@ -9,7 +9,7 @@ resource "aws_instance" "instances" {
   }
 }
 
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "record" {
   zone_id = var.zone_id
   name    = "${var.name}-${var.env}"
   type    = "A"
@@ -17,8 +17,8 @@ resource "aws_route53_record" "www" {
   records = [aws_instance.instances.private_ip]
 }
 
-resource "null_resource" "anisible" {
-  depends_on = [aws_route53_record]
+resource "null_resource" "ansible" {
+  depends_on = [aws_route53_record.record]
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
