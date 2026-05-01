@@ -7,28 +7,28 @@ instances = {
     instance_type = "t3.small"
   }
 
-  MongoDB = {
+  mongodb = {
     instance_type = "t3.small"
   }
-  Redis = {
+  redies = {
     instance_type = "t3.small"
   }
-  User = {
+  user = {
     instance_type = "t3.small"
   }
-  Cart = {
+  cart = {
     instance_type = "t3.small"
   }
-  MySQL = {
+  mysql = {
     instance_type = "t3.small"
   }
-  Shipping = {
+  shipping = {
     instance_type = "t3.small"
   }
-  RabbitMQ = {
+  rabbitmq = {
     instance_type = "t3.small"
   }
-  Payment = {
+  payment = {
     instance_type = "t3.small"
   }
 }
