@@ -5,13 +5,13 @@ resource "aws_instance" "instances" {
   vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
-    Name = "${var.name}-${var.env}"
+    Name = local.name
   }
 }
 
 resource "aws_route53_record" "record" {
   zone_id = var.zone_id
-  name    = "${var.name}-${var.env}"
+  name    = local.name
   type    = "A"
   ttl     = 30
   records = [aws_instance.instances.private_ip]

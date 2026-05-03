@@ -26,4 +26,7 @@ prod-apply: prod-init
 prod-destroy: prod-init
 	terraform destroy -var-file=./environments/prod/main.tfvars -auto-approve
 
+tools:
+   cd tools ; ls -l
+
 
