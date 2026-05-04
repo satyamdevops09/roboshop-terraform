@@ -5,16 +5,25 @@ resource "aws_instance" "instances" {
   vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
-    Name = local.name
+    Name = local.tagName
   }
 }
 
 resource "aws_route53_record" "record" {
   zone_id = var.zone_id
-  name    = local.name
+  name    = local.dnsName
   type    = "A"
   ttl     = 30
   records = [aws_instance.instances.private_ip]
+}
+
+resource "aws_route53_record" "public" {
+  count   = var.env == null ? 1 : 0
+  zone_id = var.zone_id
+  name    = local.dnsNamePublic
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instances.public_ip]
 }
 
 # resource "null_resource" "ansible" {
