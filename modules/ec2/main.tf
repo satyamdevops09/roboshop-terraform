@@ -41,7 +41,6 @@ resource "null_resource" "ansible" {
       "ansible-pull -i localhost, -U https://github.com/satyamdevops09/roboshop-ansible roboshop.yml -e role_name=${var.name} -e token=$(var.token)"
     ]
 
-
   }
 
 }
