@@ -4,12 +4,12 @@ provider "aws" {
 
 terraform {
   backend "s3" {}
-  required_providers {
-    vault = {
-      source  = "hashicorp/vault"
-      version = "4.5.0"
-    }
-  }
+  # required_providers {
+  #   vault = {
+  #     source  = "hashicorp/vault"
+  #     version = "4.5.0"
+  #   }
+  # }
 }
 
 provider "vault" {
