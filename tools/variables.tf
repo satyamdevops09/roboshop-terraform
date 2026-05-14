@@ -13,3 +13,5 @@ variable "ami" {
 variable "zone_id" {
   default="Z02251823TLKC5608JSS7"
 }
+
+variable "token" {}

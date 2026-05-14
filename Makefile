@@ -35,6 +35,6 @@ prod-destroy: prod-init ## prod destroy
 
 tools-infra: ## prod tool infra
 	git pull
-	cd tools ; terraform init ; terraform apply -auto-approve
+	cd tools ; terraform init ; terraform apply -auto-approve -var token=$(token)
 
 
