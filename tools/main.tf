@@ -9,5 +9,5 @@
 # }
 
 module "eks" {
-  source = "../modules/eks"
+  source = "./modules/eks"
 }
