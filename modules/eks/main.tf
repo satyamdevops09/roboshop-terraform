@@ -128,3 +128,14 @@ resource "aws_eks_node_group" "example" {
   # Otherwise, EKS will not be able to properly delete EC2 Instances and Elastic Network Interfaces.
 
 }
+
+resource "aws_eks_addon" "main" {
+  cluster_name = aws_eks_cluster.main.name
+  addon_name   = "vpc-cni"
+  configuration_values = jsonencode({
+    "enableNetworkPolicy" : "true",
+    "nodeAgent" : {
+      "enablePolicyEventLogs" : "true"
+    }
+  })
+}
