@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "vault" {
-  address = "http://vault-internal.sdevops09.online:8200"
+  address = "http://vault-internal.sdevops09.shop:8200"
   token = var.token
 }
 
