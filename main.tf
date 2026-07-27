@@ -16,5 +16,5 @@ module "eks" {
   env = var.env
   eks_version = each.value["eks_version"]
   subnet_ids = each.value["subnet_ids"]
-  node_group = each.value["node_group"]
+  node_groups = each.value["node_groups"]
 }
