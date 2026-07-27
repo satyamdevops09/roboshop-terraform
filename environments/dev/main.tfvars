@@ -73,5 +73,19 @@ zone_id="Z02251823TLKC5608JSS7"
 zone_name="sdevops09.shop"
 
 eks= {
+  main = {
 
+    eks_version = 1.33
+    subnet_ids = ["subnet-0140cdff0ddb3d2bf","subnet-0f57d136113c7abae"]
+    node_group = {
+      one = {
+        min_node = 1
+        max_node = 10
+
+       
+      }
+    }
+      
+
+}
 }
