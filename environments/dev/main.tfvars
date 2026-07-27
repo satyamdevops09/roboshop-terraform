@@ -77,12 +77,10 @@ eks= {
 
     eks_version = 1.33
     subnet_ids = ["subnet-0140cdff0ddb3d2bf","subnet-0f57d136113c7abae"]
-    node_group ={
+    node_groups {
       one = {
         min_node = 1
-        max_node = 10
-
-       
+        max_node = 10     
       }
     }
       
