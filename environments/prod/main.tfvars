@@ -36,5 +36,6 @@ instances = {
 env= "prod"
 # ami = "ami-09c813fb71547fc4f"
 ami ="ami-0220d79f3f480ecf5"
-zone_id="Z02251823TLKC5608JSS7"
+# zone_id="Z02251823TLKC5608JSS7"
+zone_id="Z033497019FA6Z9ADVSNL"
 zone_name="sdevops09.shop"
