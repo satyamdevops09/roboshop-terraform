@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Terraform Apply
-        run: make dec-apply
+        run: make dev-apply
