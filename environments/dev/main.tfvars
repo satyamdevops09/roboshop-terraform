@@ -49,19 +49,19 @@ databases = {
     instance_type = "t3.small"
     disk_size = 20
   }
-  mongodb = {
-    instance_type = "t3.small"
-    disk_size = 20
-  }
-  redis = {
-    instance_type = "t3.small"
-    disk_size = 20
-  }
+  # mongodb = {
+  #   instance_type = "t3.small"
+  #   disk_size = 20
+  # }
+  # redis = {
+  #   instance_type = "t3.small"
+  #   disk_size = 20
+  # }
   
-  rabbitmq = {
-    instance_type = "t3.small"
-    disk_size = 20
-  }
+  # rabbitmq = {
+  #   instance_type = "t3.small"
+  #   disk_size = 20
+  # }
   
 }
 
