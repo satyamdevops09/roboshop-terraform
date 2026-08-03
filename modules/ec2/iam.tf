@@ -23,7 +23,7 @@ inline_policy {
       Version = "2012-10-17"
       Statement = [
         {
-          Action   = []
+          Action   = local.iam_policy
           Effect   = "Allow"
           Resource = "*"
         },
