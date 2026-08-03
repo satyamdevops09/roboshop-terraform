@@ -1,5 +1,5 @@
 resource "aws_iam_role" "main" {
-  name = "&{var.name}-&{var.env}-ec2-role"
+  name = var.is_true ? "${var.name}-ec2-role" : "${var.name}-${var.env}-ec2-role"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
