@@ -14,3 +14,7 @@ variable "is_true" {
 
   default = false
 }
+
+variable "iam_policy" {
+    default = []
+}
