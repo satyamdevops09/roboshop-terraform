@@ -7,7 +7,7 @@ variable "tools" {
 
     github-runner = {
       instance_type="t3.small"
-      imam_policy = ["*"]
+      iam_policy = ["*"]
     }
 
   }
