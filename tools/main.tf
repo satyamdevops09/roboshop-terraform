@@ -1,7 +1,7 @@
 module "tools" {
   for_each = var.tools
   source = "../modules/ec2"
-  ami    = var.ami
+  ami    = try(each.value["ami"], var.ami)
   instance_type = each.value["instance_type"]
   name = each.key
   zone_id = var.zone_id
@@ -17,4 +17,3 @@ resource "aws_ecr_repository" "main" {
   image_tag_mutability = each.value
   
 }
-
