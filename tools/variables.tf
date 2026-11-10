@@ -5,11 +5,11 @@ variable "tools" {
       ami = "ami-0220d79f3f480ecf5"
     }
 
-    # github-runner = {
-    #   instance_type="t3.small"
-    #   iam_policy = ["*"]
-    #   disk_size = 50
-    # }
+    github-runner = {
+      instance_type="t3.small"
+      iam_policy = ["*"]
+      disk_size = 50
+    }
 
   }
 }
