@@ -87,8 +87,8 @@ eks= {
     access={
       workstation = {
         principal_arn = "arn:aws:iam::479363499437:role/workstation-role"
-        access_scope = "cluster"
-        policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
+        # access_scope = "cluster"
+        # policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSAdminPolicy"
       }
     }
       
