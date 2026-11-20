@@ -62,6 +62,7 @@ resource "aws_eks_access_policy_association" "main" {
   cluster_name  = aws_eks_cluster.main.name
   policy_arn    = each.value["policy_arn"]
   principal_arn = each.value["principal_arn"]
+  depends_on    = [aws_eks_access_entry.access]
 
   access_scope {
     type       = each.value["access_scope"]
